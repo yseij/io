@@ -36,3 +36,15 @@
     transform: rotate(360deg);
   }
 }
+
+table,
+th,
+tr,
+td {
+  border-collapse: collapse;
+  padding: 5px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}

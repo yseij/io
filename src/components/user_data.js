@@ -13,7 +13,6 @@ const UserItem = (props) => {
       <td style={stylesTableDescription}>
         <Link
           to={{ pathname: `/userDetail/${item.email}`, state: item }}
-          activeClassName="active"
           item={item}
         >
           {item.name.first} {item.name.last}

@@ -9,9 +9,11 @@ const UserDetail = (props) => {
         Persoon: {item.name.first} {item.name.last}
       </h2>
       <p>
-        <img src={item.picture.medium} alt="Persoon" />
+        <img src={item.picture.medium} alt="Persoon" style={{ width: "15%" }} />
       </p>
-      <p>Hier onder zie je gegevens: </p>
+      <p>
+        Hier onder zie je de gegevens over {item.name.first} {item.name.last}:{" "}
+      </p>
       <ul>
         <li>Geslacht: {item.gender}</li>
         <li>Email: {item.email}</li>

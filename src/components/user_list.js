@@ -15,8 +15,7 @@ class UserList extends Component {
       genderSorting: 0,
       errorApi: true,
     };
-
-    this.handleClick = this.handleClickSort.bind(this);
+    this.SortingName = this.SortingName.bind(this);
     this.OnChangeFilterGender = this.OnChangeFilterGender.bind(this);
   }
 
@@ -27,22 +26,6 @@ class UserList extends Component {
       this.setState({ huidigeItems: clients.data.results });
     };
     fetchUsers();
-  }
-
-  handleClickSort(event, param) {
-    switch (param) {
-      case "name":
-        this.SortingName();
-        break;
-      case "email":
-        this.SortingEmail();
-        break;
-      case "gender":
-        this.SortingGender();
-        break;
-      default:
-        break;
-    }
   }
 
   SortingName() {
@@ -123,7 +106,6 @@ class UserList extends Component {
       borderBottomWidth: StyleSheet.hairlineWidth,
     };
 
-    console.log(this.state.items);
     if (typeof this.state.items !== "undefined") {
       const output = this.state.items.map((item, i) => {
         return <UserData item={item} key={item.login.uuid} />;
@@ -131,38 +113,33 @@ class UserList extends Component {
       return (
         <div>
           <FilterGender onChange={this.OnChangeFilterGender} />
+          <p>
+            klik op de headers {"("}name, email en gender{")"} van de tabel om
+            te sorteren
+          </p>
           <table>
-            <tbody>
+            <thead>
               <tr>
-                <th
-                  style={stylesTableHeader}
-                  onClick={(event) => this.handleClickSort(event, "name")}
-                >
+                <th style={stylesTableHeader} onClick={this.SortingName}>
                   Name
                 </th>
-                <th
-                  style={stylesTableHeader}
-                  onClick={(event) => this.handleClickSort(event, "email")}
-                >
+                <th style={stylesTableHeader} onClick={this.SortingEmail}>
                   Email
                 </th>
                 <th style={stylesTableHeader}>Phone</th>
-                <th
-                  style={stylesTableHeader}
-                  onClick={(event) => this.handleClickSort(event, "gender")}
-                >
+                <th style={stylesTableHeader} onClick={this.SortingGender}>
                   Gender
                 </th>
               </tr>
-              {output}
-            </tbody>
+            </thead>
+            <tbody>{output}</tbody>
           </table>
         </div>
       );
     } else {
       return (
         <div>
-          <p>Kon geen gegevens ophalen --> check je API instellingen</p>
+          <p>Kon geen gegevens ophalen --{">"} check je API instellingen</p>
         </div>
       );
     }
