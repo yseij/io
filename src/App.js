@@ -12,7 +12,7 @@ const App = function () {
         <Route exact path="/">
           <UserList />
         </Route>
-        <Route path="/userDetail/:uuid" component={UserDetail} />
+        <Route path="/userDetail" component={UserDetail} />
       </Switch>
     </Router>
   );

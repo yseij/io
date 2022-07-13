@@ -9,7 +9,7 @@ const UserDetail = (props) => {
         Persoon: {item.name.first} {item.name.last}
       </h2>
       <p>
-        <img src={item.picture.medium} alt="Persoon" style={{ width: "15%" }} />
+        <img src={item.picture.medium} alt="Persoon" style={{ width: "20%" }} />
       </p>
       <p>
         Hier onder zie je de gegevens over {item.name.first} {item.name.last}:{" "}

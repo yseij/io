@@ -16,6 +16,8 @@ class UserList extends Component {
       errorApi: true,
     };
     this.SortingName = this.SortingName.bind(this);
+    this.SortingEmail = this.SortingEmail.bind(this);
+    this.SortingGender = this.SortingGender.bind(this);
     this.OnChangeFilterGender = this.OnChangeFilterGender.bind(this);
   }
 
@@ -112,10 +114,12 @@ class UserList extends Component {
       });
       return (
         <div>
-          <FilterGender onChange={this.OnChangeFilterGender} />
           <p>
             klik op de headers {"("}name, email en gender{")"} van de tabel om
-            te sorteren
+            te sorteren.
+          </p>
+          <p>
+            <FilterGender onChange={this.OnChangeFilterGender} />
           </p>
           <table>
             <thead>

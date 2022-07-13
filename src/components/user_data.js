@@ -11,10 +11,7 @@ const UserItem = (props) => {
   return (
     <tr>
       <td style={stylesTableDescription}>
-        <Link
-          to={{ pathname: `/userDetail/${item.email}`, state: item }}
-          item={item}
-        >
+        <Link to={{ pathname: `/userDetail`, state: item }}>
           {item.name.first} {item.name.last}
         </Link>
       </td>
